@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Red Hat Text', Courier, monospace;
+}
+
+:root {
+    --background-color:hsl(20, 50%, 98%);
+    --primary-color:hsl(14, 86%, 42%);
+    --secondary-color:hsl(14, 65%, 9%);
+    --rose-300: hsl(14, 25%, 72%);
+    --rose-500: hsl(12, 20%, 44%);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+li {
+    list-style-type: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.content-center {
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.font-700 {
+    font-weight: 700;
+}

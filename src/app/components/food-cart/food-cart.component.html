@@ -1,0 +1,32 @@
+<div class="cart__container">
+    <h2 class="cart__title">Your Cart ({{getTotalItems()}})</h2>
+    <ul class="cart__items--container">
+        <li class="cart__item" *ngFor="let food of cart">
+            <div class="flex space-between items-center">
+                <div class="item__info--container">
+                    <div class="item__name">{{ food.name }}</div>
+                    <div class="item__price--container flex">
+                        <div class="item__quantity">{{ food.quantity }}x</div>
+                        <div class="item__price">{{ "@ $" + food.price.toFixed(2) }}</div>
+                        <div class="item__totalPrice">{{ "$" + getTotalFoodPrice(food).toFixed(2) }}</div>
+                    </div>
+                </div>
+                <svg class="delete__btn" (click)="deleteItem(food)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 10 10">
+                    <path fill="#000" d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"/>
+                </svg>
+            </div>
+            <div class="line-divider"></div>
+        </li>
+    </ul>
+    <div class="cart__empty flex-column items-center" *ngIf="cart.length === 0">
+        <img src="/assets/images/illustration-empty-cart.svg" alt="">
+        <p>Your added items will appear here</p>
+    </div>
+    <div class="cart-total__container" *ngIf="cart.length > 0">
+        <div class="flex space-between">
+            <div class="total__name">Order Total</div>
+            <div class="totalCart__price">{{ '$' + getTotalCart().toFixed(2) }}</div>
+        </div>
+        <button class="cartConfirm__btn">Confirm Order</button>
+    </div>
+</div>

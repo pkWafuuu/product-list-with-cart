@@ -1,0 +1,30 @@
+<div class="food-card__container">
+  <div class="food-card__img--container">
+    <img [src]="food.image.desktop" alt="" [ngClass]="getCart() ? 'active__border' : '' " class="food-card__img" />
+    <button (click)="addToCart(food)" *ngIf="!getCart()" class="button add-to-cart__button--container">
+      <span>
+        <img
+          class="span__img"
+          src="/assets/images/icon-add-to-cart.svg"
+          alt=""
+        />
+      </span>
+      <p>Add to cart</p>
+    </button>
+    <div *ngIf="getCart() ? true : deleteItem(food)" class="button button__container">
+      <svg (click)="decrement(food)" class="increment__decrement" xmlns="http://www.w3.org/2000/svg" width="10" height="2" viewBox="0 0 10 2">
+        <path d="M0 1h10" stroke="#fff" stroke-width="1" />
+      </svg>
+      {{ food.quantity }}
+      <svg (click)="increment(food)" class="increment__decrement" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+        <path d="M5 1v8M1 5h8" stroke="#fff" stroke-width="1" stroke-linecap="round" />
+      </svg>
+    </div>
+
+  </div>
+  <div class="food-card__info--container">
+    <div class="food-card__category">{{ food.category }}</div>
+    <div class="food-card__name">{{ food.name }}</div>
+    <div class="food-card__price">${{ food.price.toFixed(2) }}</div>
+  </div>
+</div>

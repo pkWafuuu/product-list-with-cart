@@ -1,0 +1,93 @@
+.food-card__container {
+    padding: 0 32px;
+}
+
+.food-card__img--container {
+    margin-bottom:32px;
+    position: relative;
+}
+
+.food-card__img {
+    width: 100%;    
+    border-radius: 25px;
+}
+
+.active__border {
+    border: 2px var(--primary-color) solid
+}
+
+.button {
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    padding: 10px 0;
+    width: 70%;
+    background-color: #fff;
+}
+
+.button__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 10px 14px;
+    color: #fff;
+}
+
+.increment__decrement {
+    padding: 4px;
+    border-radius: 50%;
+    border: solid 1px #fff;
+    height: 20px;
+    width: 20px;
+    transition: 100ms ease;
+}
+
+.increment__decrement:hover {
+    background-color: #fff;
+}
+
+.increment__decrement:hover path {
+    stroke: var(--primary-color); /* Change the line color */
+  }
+
+
+span {
+    height: 20px;
+}
+
+.span__img {
+    width: 20px;
+    height: 100%;
+    margin-right: 8px;
+}
+
+.add-to-cart__button--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.food-card__category {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: hsl(7, 20%, 60%)
+}
+
+.food-card__name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.food-card__price {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 28px;
+}

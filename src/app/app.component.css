@@ -1,0 +1,27 @@
+.home__container {
+    display: flex;
+    padding: 84px;
+}
+
+.home__title {
+    margin-bottom: 24px;
+}
+
+.menu__container {
+    width: 70%;
+}
+
+.food-menu__container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.food-menu__card--container {
+    width: calc(100% / 3);
+}
+
+.menu__cart--container {
+    width: 30%;
+}
+
+
