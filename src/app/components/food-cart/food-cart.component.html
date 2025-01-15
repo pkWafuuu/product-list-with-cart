@@ -8,7 +8,7 @@
                     <div class="item__price--container flex">
                         <div class="item__quantity">{{ food.quantity }}x</div>
                         <div class="item__price">{{ "@ $" + food.price.toFixed(2) }}</div>
-                        <div class="item__totalPrice">{{ "$" + getTotalFoodPrice(food).toFixed(2) }}</div>
+                        <div class="item__totalPrice">{{ "$" + food.totalPrice?.toFixed(2) }}</div>
                     </div>
                 </div>
                 <svg class="delete__btn" (click)="deleteItem(food)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 10 10">
@@ -33,6 +33,12 @@
             </svg>
             <span>This is a <span class="font-bold">carbon-neutral</span> delivery</span>
         </div>
-        <button class="cartConfirm__btn">Confirm Order</button>
+        <button (click)="confirmOrder()" class="confirm__btn">Confirm Order</button>
+        <app-order-confirmation
+            *ngIf="clicked"
+            [cart]="cart"
+            [totalCartPrice]="getTotalCart()"
+        >
+        </app-order-confirmation>
     </div>
 </div>

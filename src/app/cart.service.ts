@@ -17,6 +17,7 @@ export class CartService {
 
   add(food: iFood){
     this.cart.push(food)
+    this.totalItemPrice(food)
     this.cartSubject.next([...this.cart]);
     console.log('added' + food.name)
   }
@@ -31,6 +32,7 @@ export class CartService {
       food.quantity = 0;
     }
     food.quantity++;
+    this.totalItemPrice(food).toFixed(2)
     console.log('incremented ' + food.name + ' to ' + food.quantity)
   }
 
@@ -39,7 +41,12 @@ export class CartService {
       food.quantity = 0;
     }
     food.quantity--;
+    this.totalItemPrice(food).toFixed(2)
     console.log('incremented ' + food.name + ' to ' + food.quantity)
+  }
+
+  totalItemPrice(food: iFood){
+    return food.totalPrice = food.price * (food.quantity || 1)
   }
 
   getCart(): iFood[] {

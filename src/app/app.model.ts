@@ -9,4 +9,5 @@ export interface iFood {
     category: string;
     price: number;
     quantity?:number;
+    totalPrice?: number;
 }

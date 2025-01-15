@@ -1,0 +1,38 @@
+.confirmation__container {
+    position: fixed ;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: #0000008d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.confirmation__wrapper {
+    padding: 32px;
+    background-color: #fff;
+    max-height: 80%;
+    border-radius: 12px;
+    overflow-y: auto; /* Allow scrolling for the inner content */
+    width: 35%;
+}
+
+.confirmed-food__container {
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+.item__quantity {
+    margin-right: 12px;
+}
+
+.item__img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    margin-right: 16px;
+}
