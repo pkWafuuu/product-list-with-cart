@@ -38,6 +38,7 @@
             *ngIf="clicked"
             [cart]="cart"
             [totalCartPrice]="getTotalCart()"
+            (orderConfirmed)="confirmOrder()"
         >
         </app-order-confirmation>
     </div>

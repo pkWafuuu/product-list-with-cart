@@ -49,6 +49,11 @@ export class CartService {
     return food.totalPrice = food.price * (food.quantity || 1)
   }
 
+  emptyCart(){
+    this.cart = [];
+    this.cartSubject.next([...this.cart]);
+  }
+
   getCart(): iFood[] {
     return this.cart;
   }
