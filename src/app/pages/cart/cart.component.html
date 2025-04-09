@@ -1,0 +1,15 @@
+<div class="home__container">
+  <div class="menu__container">
+    <h1 class="home__title">Desert</h1>
+    <ul class="food-menu__container">
+      <li class="food-menu__card--container" *ngFor="let food of foodMenu">
+        <app-food-card
+          [food]="food"
+        ></app-food-card>
+      </li>
+    </ul>
+  </div>
+  <div class="menu__cart--container">
+    <app-food-cart></app-food-cart>
+  </div>
+</div>
