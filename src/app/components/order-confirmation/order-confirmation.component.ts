@@ -19,7 +19,8 @@ export class OrderConfirmationComponent {
   constructor(private cartSvc: CartService) {}
 
   closeOrder() {
-    this.cartSvc.emptyCart();
+    this.cartSvc.addToOrders(this.cart)
+    // this.cartSvc.emptyCart();
     this.orderConfirmed.emit();
   }
 }

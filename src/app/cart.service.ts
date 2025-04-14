@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 })
 export class CartService {
   private cart: iFood[] = [];
+  private orders: iFood[] = [];
   private cartSubject = new BehaviorSubject<iFood[]>(this.cart);
 
   constructor() { }
@@ -29,7 +30,7 @@ export class CartService {
 
   increment(food: iFood) {
     if (food.quantity === undefined) {
-      food.quantity = 0;
+      food.quantity = 1;
     }
     food.quantity++;
     this.totalItemPrice(food).toFixed(2)
@@ -38,7 +39,7 @@ export class CartService {
 
   decrement(food: iFood) {
     if (food.quantity === undefined) {
-      food.quantity = 0;
+      food.quantity = 1;
     }
     food.quantity--;
     this.totalItemPrice(food).toFixed(2)
@@ -52,6 +53,16 @@ export class CartService {
   emptyCart(){
     this.cart = [];
     this.cartSubject.next([...this.cart]);
+  }
+
+  addToOrders(food:iFood[]){
+    this.orders.push(...food.map(f => ({ ...f })));
+    console.log(this.orders)
+    this.emptyCart()
+  }
+
+  getOrders(): iFood[] {
+    return this.orders;
   }
 
   getCart(): iFood[] {

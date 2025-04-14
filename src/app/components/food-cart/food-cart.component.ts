@@ -15,6 +15,7 @@ export class FoodCartComponent {
   cart: iFood[] = [];
   clicked: boolean = false;
 
+  
   constructor(private cartSvc: CartService){}
 
   ngOnInit() {
