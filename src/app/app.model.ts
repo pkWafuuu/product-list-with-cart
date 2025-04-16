@@ -11,3 +11,9 @@ export interface iFood {
     quantity?:number;
     totalPrice?: number;
 }
+
+export interface iUser {
+    UID?: number
+    name: string;
+    choice: string
+}

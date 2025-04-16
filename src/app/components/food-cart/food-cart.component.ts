@@ -20,7 +20,7 @@ export class FoodCartComponent {
 
   ngOnInit() {
     this.cartSvc.getCartObservable().subscribe(cart => {
-      this.cart = cart; // Updates whenever the cart changes
+      this.cart = cart;
     });
   }
 

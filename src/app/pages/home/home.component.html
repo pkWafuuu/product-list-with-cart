@@ -1,2 +1,9 @@
-<h1>People who agree to Abdelrahman Abdullah staying in DOH</h1>
-<app-general-table [headers]="homeHeaders" [data]="homeData"></app-general-table>
+<div class="row">
+    <h1>People who agree to Abdelrahman Abdullah staying in DOH</h1>
+    <form action="">
+        <input type="text" placeholder="Name" name="name" [(ngModel)]="userData.name" required>
+        <input type="text" placeholder="choice" name="choice" [(ngModel)]="userData.choice" required>
+        <button (click)="addUser(userData)">Add</button>
+    </form>
+    <app-general-table [headers]="homeHeaders" [data]="homeData"></app-general-table>
+</div> 
